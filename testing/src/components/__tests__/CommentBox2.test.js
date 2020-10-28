@@ -1,12 +1,12 @@
-// Note: The unit tests in this file show full DOM rendering just to teach the concept. See CommentBox2.test.js for shallow rendering.
+// Note: This file has the same unit tests as CommentBox.test.js except that it uses shallow mode.
 import React from "react";
-import { mount } from "enzyme";
+import { shallow } from "enzyme";
 import CommentBox from "src/components/CommentBox";
 
 let wrappedComponent;
 
 beforeEach(() => {
-    wrappedComponent = mount(<CommentBox />); // Get back component with additional functionality.
+    wrappedComponent = shallow(<CommentBox />); // Get back component with additional functionality.
 });
 
 afterEach(() => {
@@ -25,7 +25,8 @@ describe('the text area', () => {
      * component to update itself after state settles so we can check value in text area.
      */
     beforeEach(() => {
-        wrappedComponent.find("textarea").simulate("change", { target: { value: "new comment" } });
+        const mockChangeEvent = { target: { value: "new comment" } };
+        wrappedComponent.find("textarea").simulate("change", mockChangeEvent);
         wrappedComponent.update();
     });
 
@@ -38,7 +39,8 @@ describe('the text area', () => {
      * is asynchronous, we force component to update itself after state settles so we can check value in text area.
      */
     it("should be emptied after user submits form", () => {
-        wrappedComponent.find("form").simulate("submit");
+        const mockSubmitEvent = { preventDefault: () => { } };
+        wrappedComponent.find("form").simulate("submit", mockSubmitEvent);
         wrappedComponent.update();
         expect(wrappedComponent.find("textarea").prop("value")).toEqual("");
     });
