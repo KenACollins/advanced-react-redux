@@ -1,12 +1,14 @@
 // Note: This file has the same unit tests as CommentBox.test.js except that it uses shallow mode.
+// THIS FILE HAS BEEN MOVED OUTSIDE OF SRC FOLDER BECAUSE THE TESTS HAVE NOT WORKED SINCE REDUX WAS ADDED TO PROJECT AND ROOT HELPER WAS IMPORTED BELOW.
 import React from "react";
 import { shallow } from "enzyme";
 import CommentBox from "src/components/CommentBox";
+import Root from 'src/Root';
 
 let wrappedComponent;
 
 beforeEach(() => {
-    wrappedComponent = shallow(<CommentBox />); // Get back component with additional functionality.
+    wrappedComponent = shallow(<Root><CommentBox /></Root>); // Get back component with additional functionality.
 });
 
 afterEach(() => {
