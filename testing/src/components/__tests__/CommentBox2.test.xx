@@ -1,5 +1,5 @@
 // Note: This file has the same unit tests as CommentBox.test.js except that it uses shallow mode.
-// THIS FILE HAS BEEN MOVED OUTSIDE OF SRC FOLDER BECAUSE THE TESTS HAVE NOT WORKED SINCE REDUX WAS ADDED TO PROJECT AND ROOT HELPER WAS IMPORTED BELOW.
+// THIS FILE HAS BEEN GIVEN A *.XX EXTENSION TO STOP JEST FROM FINDING IT AND RUNNING IT. THE TESTS HAVE NOT WORKED SINCE REDUX WAS ADDED TO PROJECT AND ROOT HELPER WAS IMPORTED BELOW.
 import React from "react";
 import { shallow } from "enzyme";
 import CommentBox from "src/components/CommentBox";
