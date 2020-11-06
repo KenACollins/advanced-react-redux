@@ -7,7 +7,7 @@ import App from "../components/App";
 
 /**
  * Set up moxios and tell it to intercept and stop all axios requests. We provide it the URL to be on the lookout for,
- * but moxious does not actually call it. Instead, we provide a mocked response comprising just two comments.
+ * but moxios does not actually call it. Instead, we provide a mocked response comprising just two comments.
  */
 beforeEach(() => {
     moxios.install();
