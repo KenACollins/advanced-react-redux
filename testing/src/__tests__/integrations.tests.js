@@ -17,6 +17,7 @@ beforeEach(() => {
     });
 });
 
+/* We uninstall moxios to ensure we don't attempt to use the same stub request above in other tests. */
 afterEach(() => {
     moxios.uninstall();
 });
